@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" th:href="@{css/style.css}">
+<body>
+<div class="main">
+    <div class="send">
+        <div class="inner-send">
+            <p>Người gửi</p>
+            <div class="input-box">
+                <p>Nội dung</p>
+                <div class="text-box">
+                    <form th:action="@{/get-text}" class="form-container" method="post" enctype="multipart/form-data">
+                        <textarea name="content" id="2" th:text="${content}"></textarea>
+                        <div class="button-container">
+                            <input type="file" name="file"/>
+                            <button>Ký</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="result">
+                <p>Chữ ký</p>
+                <div class="text-box">
+                    <form action="" class="form-container">
+                        <textarea name="" id="1" th:text="${signature}"></textarea>
+                        <div class="button-container">
+                            <button type="button" onclick="">Lưu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="receive">
+    </div>
+</div>
+</body>
+<script th:src="@{js/index.js}"></script>
+
+</html>
